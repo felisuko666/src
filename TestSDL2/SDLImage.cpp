@@ -1,5 +1,5 @@
 #include "SDLImage.h"
-
+//hola don pepito
 //default constructor
 CSDLImage::CSDLImage(void)
 {
@@ -34,7 +34,7 @@ bool CSDLImage::LoadImage(std::string file)
     
 	if (m_surface== nullptr)
 	{
-        throw std::runtime_error("Failed to load image: " + file + IMG_GetError());
+       // throw std::runtime_error("Failed to load image: " + file + IMG_GetError());
 	     success=false;
 	}
 	return success;
@@ -65,9 +65,11 @@ SDL_Surface* CSDLImage::LoadSurface( std::string path )
 
 	//Load image at specified path
 	SDL_Surface* loadedSurface = IMG_Load( path.c_str() );
+
+	
 	if( loadedSurface == nullptr )
 	{
-		//printf( "Unable to load image %s! SDL_image Error: %s\n", path.c_str(), IMG_GetError() );
+		printf( "Unable to load image %s! SDL_image Error: %s\n", path.c_str(), IMG_GetError() );
 	}
 	else
 	{
@@ -75,7 +77,7 @@ SDL_Surface* CSDLImage::LoadSurface( std::string path )
 		optimizedSurface = SDL_ConvertSurface( loadedSurface, m_surface->format, NULL );
 		if( optimizedSurface == nullptr )
 		{
-			//printf( "Unable to optimize image %s! SDL Error: %s\n", path.c_str(), SDL_GetError() );
+			printf( "Unable to optimize image %s! SDL Error: %s\n", path.c_str(), SDL_GetError() );
 		}
 
 		//Get rid of old loaded surface

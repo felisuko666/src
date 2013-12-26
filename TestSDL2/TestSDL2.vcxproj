@@ -38,7 +38,10 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>M:\sdl\SDL2-devel-2.0.0-VC\SDL2-2.0.0\SDL2_image-2.0.0\include;M:\sdl\SDL2-devel-2.0.1-VC\SDL2-2.0.1\include;$(IncludePath)</IncludePath>
+    <LibraryPath>M:\sdl\SDL2-devel-2.0.1-VC\SDL2-2.0.1\lib\x64;M:\sdl\SDL2-devel-2.0.0-VC\SDL2-2.0.0\SDL2_image-2.0.0\lib\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -48,7 +51,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>K:\sdl\SDL2-devel-2.0.0-VC\SDL2-2.0.0\SDL2_image-2.0.0\lib\x86;K:\sdl\SDL2-devel-2.0.0-VC\SDL2-2.0.0\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>M:\sdl\SDL2-devel-2.0.0-VC\SDL2-2.0.0\SDL2_image-2.0.0\lib\x64;M:\sdl\SDL2-devel-2.0.1-VC\SDL2-2.0.1\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2Main.lib;SDL2Test.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
     </Link>
